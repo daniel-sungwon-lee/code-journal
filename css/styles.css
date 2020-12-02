@@ -107,3 +107,6 @@ button:hover {
     text-align: center;
   }
 }
+.edit-profile.hidden{
+  display: none;
+}
