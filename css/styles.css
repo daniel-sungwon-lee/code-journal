@@ -1,0 +1,33 @@
+.header {
+  font-family: "Yantramanav",sans-serif;
+  font-size: 33px;
+  background-color: #CED4DA;
+  color: black;
+  margin: 0;
+  padding: 1rem 3rem;
+}
+h1 {
+  font-family: "Noto Sans JP",sans-serif;
+  font-size: 33px;
+  margin-left: 3rem;
+}
+form {
+  display: flex;
+  max-width: 1080px;
+}
+.profile-image {
+  width: 50%;
+  margin: 0 auto;
+}
+.text-inputs {
+  margin: 0 auto;
+}
+.text {
+  width: 20rem;
+  height: 2.5rem;
+  outline: none;
+  border: solid #CED4DA;
+}
+p {
+  font-family: "Noto Sans JP",sans-serif;
+}

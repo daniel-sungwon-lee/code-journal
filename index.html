@@ -12,12 +12,30 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
+    <h1 class="header">Code Journal</h1>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div data-view="edit-profile">
+      <h1>Edit Profile</h1>
+      <form>
+        <input class="profile-image" type="image" src="./images/placeholder-image-square.jpg" name="profile-image">
+        <div class="text-inputs">
+          <label for="avatar-url"><p>Avatar URL</p></label>
+          <input class="text" type="text" name="avatarUrl" id="avatar-url">
+          <label for="username"><p>Username</p></label>
+          <input class="text" type="text" name="username" id="username">
+          <label for="full-name"><p>Full Name</p></label>
+          <input class="text" type="text" name="fullname" id="full-name">
+          <label for="location"><p>Location</p></label>
+          <input class="text" type="text" name="location" id="location">
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
