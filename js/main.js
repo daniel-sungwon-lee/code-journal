@@ -19,3 +19,21 @@ $form.addEventListener("submit",function(event){
   $form.reset()
   $profileImage.setAttribute("src","./images/placeholder-image-square.jpg")
 })
+
+function profile (profileData){
+
+}
+
+var $editProfile = document.querySelector(".edit-profile")
+var $profile = document.querySelector(".profile")
+
+function swap (view){
+  if (view === "edit-profile"){
+    $editProfile.className="edit-profile"
+    $profile.className="profile hidden"
+
+  } else if (view ==="profile"){
+    $profile.className="profile"
+    $editProfile.className="edit-profile hidden"
+  }
+}
