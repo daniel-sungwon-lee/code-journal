@@ -11,7 +11,7 @@ h1 {
   font-size: 33px;
   margin-left: 3rem;
 }
-form {
+form,section {
   max-width: 862px;
   position: relative;
 }
@@ -109,4 +109,16 @@ button:hover {
 }
 .edit-profile.hidden{
   display: none;
+}
+.info {
+
+}
+.icon {
+  width: 3rem;
+  position: relative;
+  top: 10px;
+}
+.bio-paragraph {
+  line-height: 1.8;
+  margin: 2rem 1rem;
 }
