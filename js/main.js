@@ -20,20 +20,26 @@ $form.addEventListener("submit",function(event){
   $profileImage.setAttribute("src","./images/placeholder-image-square.jpg")
 })
 
-function profile (profileData){
+var $profile = document.querySelector(".profile")
+var $editProfile = document.querySelector(".edit-profile")
 
+function profile (profileObject){
+  $profile.querySelector(".fullName").textContent=profileObject.fullName
+  $profile.querySelector(".username").innerText=profileObject.username
+  $profile.querySelector(".location").innerText=profileObject.location
+  $profile.querySelector(".bio").textContent=profileObject.bio
 }
 
-var $editProfile = document.querySelector(".edit-profile")
-var $profile = document.querySelector(".profile")
-
-function swap (view){
-  if (view === "edit-profile"){
+function swap (dataView){
+  if (dataView === "edit-profile"){
     $editProfile.className="edit-profile"
     $profile.className="profile hidden"
+    data.view = dataView
 
-  } else if (view ==="profile"){
+  } else if (dataView ==="profile"){
     $profile.className="profile"
     $editProfile.className="edit-profile hidden"
+    data.view = dataView
+
   }
 }
