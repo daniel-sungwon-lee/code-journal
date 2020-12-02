@@ -27,16 +27,20 @@
           <input class="profile-image profile-image-full" type="image" src="./images/placeholder-image-square.jpg" name="profile-image">
           <div class="text-inputs text-inputs-full">
             <label for="avatar-url"><p>Avatar URL</p></label>
-            <input class="text" type="text" name="avatarUrl" id="avatar-url">
+            <input class="text" type="text" name="avatarUrl" id="avatar-url" required>
             <label for="username"><p>Username</p></label>
-            <input class="text" type="text" name="username" id="username">
+            <input class="text" type="text" name="username" id="username" required>
             <label for="full-name"><p>Full Name</p></label>
-            <input class="text" type="text" name="fullname" id="full-name">
+            <input class="text" type="text" name="fullName" id="full-name" required>
             <label for="location"><p>Location</p></label>
-            <input class="text" type="text" name="location" id="location">
+            <input class="text" type="text" name="location" id="location" required>
           </div>
         </div>
-
+        <div class="row-full">
+          <label for="bio"><p>Bio</p></label>
+          <textarea name="bio" id="bio" required></textarea>
+        </div>
+        <button type="submit">Save</button>
       </form>
     </div>
   </main>
