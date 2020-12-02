@@ -24,8 +24,10 @@
       <h1>Edit Profile</h1>
       <form>
         <div class="row-half">
-          <input class="profile-image profile-image-full" type="image" src="./images/placeholder-image-square.jpg" name="profile-image">
-          <div class="text-inputs text-inputs-full">
+          <div class="image-frame">
+            <input class="profile-image" type="image" src="./images/placeholder-image-square.jpg" name="profile-image">
+          </div>
+          <div class="text-inputs">
             <label for="avatar-url"><p>Avatar URL</p></label>
             <input class="text" type="text" name="avatarUrl" id="avatar-url" required>
             <label for="username"><p>Username</p></label>
@@ -40,7 +42,9 @@
           <label for="bio"><p>Bio</p></label>
           <textarea name="bio" id="bio" required></textarea>
         </div>
-        <button type="submit">Save</button>
+        <div class="row-button">
+          <button type="submit">Save</button>
+        </div>
       </form>
     </div>
   </main>

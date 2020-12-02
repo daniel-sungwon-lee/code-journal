@@ -18,9 +18,15 @@ form {
 .row-half{
   display: flex;
 }
-.profile-image {
+.image-frame{
   width: 50%;
   margin-left: 3rem;
+}
+.profile-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 .text-inputs {
   padding-left: 3rem;
@@ -40,13 +46,18 @@ form {
 p {
   font-family: "Noto Sans JP",sans-serif;
 }
-@media screen and (max-width:431px){
+@media screen and (max-width:850px){
   .row-half{
     flex-direction: column;
   }
-  .profile-image-full,.text-inputs-full{
+  .image-frame{
+    margin: auto;
+  }
+  .text-inputs{
     width: 100%;
     margin: 0 auto;
+    text-align: center;
+    padding: initial
   }
 }
 .row-full {
@@ -63,14 +74,19 @@ textarea {
 textarea:focus {
   box-shadow: 0px 0px 20px lightgray;
 }
-@media screen and (max-width: 431px){
+@media screen and (max-width: 850px){
   textarea{
     width: 320px;
   }
+  .row-full{
+    margin: initial;
+    text-align: center;
+  }
+}
+.row-button {
+  text-align: right;
 }
 button{
-  position: absolute;
-  right: 0;
   width: 5rem;
   font-family: 'Noto Sans JP',sans-serif;
   height: 35px;
@@ -86,8 +102,8 @@ button{
 button:hover {
   background-color: #CED4DA;
 }
-@media screen and (max-width: 431px){
-  button{
-    margin: 2rem 3rem;
+@media screen and (max-width: 850px){
+  .row-button{
+    text-align: center;
   }
 }
