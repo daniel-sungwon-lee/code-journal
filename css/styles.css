@@ -12,22 +12,40 @@ h1 {
   margin-left: 3rem;
 }
 form {
+  max-width: 862px;
+  max-height: 431px;
+}
+.row-half{
   display: flex;
-  max-width: 1080px;
 }
 .profile-image {
   width: 50%;
-  margin: 0 auto;
+  margin-left: 3rem;
 }
 .text-inputs {
-  margin: 0 auto;
+  padding-left: 3rem;
+  width: 50%;
 }
 .text {
   width: 20rem;
   height: 2.5rem;
   outline: none;
   border: solid #CED4DA;
+  border-radius: 20px;
+  transition: box-shadow 0.5s ease;
+}
+.text:focus{
+  box-shadow: 0px 0px 20px lightgray;
 }
 p {
   font-family: "Noto Sans JP",sans-serif;
+}
+@media screen and (max-width:431px){
+  .row-half{
+    flex-direction: column;
+  }
+  .profile-image-full,.text-inputs-full{
+    width: 100%;
+    margin: 0 auto;
+  }
 }
