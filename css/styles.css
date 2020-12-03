@@ -27,6 +27,7 @@ form,section {
   max-height: 100%;
   object-fit: contain;
   border-radius: 50%;
+  outline: none;
 }
 .text-inputs {
   padding-left: 3rem;
@@ -78,9 +79,6 @@ button{
 }
 button:hover {
   background-color: #CED4DA;
-}
-.edit-profile.hidden{
-  display: none;
 }
 .texts {
   margin-top: 3rem;

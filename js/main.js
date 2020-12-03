@@ -79,12 +79,18 @@ function renderProfile (profile){
 function swap (dataView){
   if (dataView === "edit-profile"){
     $editProfile.className="edit-profile"
-    $profile.className="profile hidden"
+    $profile.className="hidden"
     data.view = dataView
+    $form.elements.avatarUrl.value=userData.profile.avatarUrl
+    $profileImage.setAttribute("src",userData.profile.avatarUrl)
+    $form.elements.username.value=userData.profile.username
+    $form.elements.fullName.value=userData.profile.fullName
+    $form.elements.location.value=userData.profile.location
+    $form.elements.bio.value=userData.profile.bio
 
   } else if (dataView ==="profile"){
     $profile.className="profile"
-    $editProfile.className="edit-profile hidden"
+    $editProfile.className="hidden"
     data.view = dataView
     $profile.appendChild(renderProfile(data.profile))
   }
