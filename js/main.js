@@ -83,18 +83,15 @@ function renderProfile (profile){
   p3.textContent=profile.bio
   div4.appendChild(p3)
 
-  var divRowButton = document.createElement("div")
-  divRowButton.setAttribute("class","row-button")
-  section.appendChild(divRowButton)
+  var divRowLink = document.createElement("div")
+  divRowLink.setAttribute("class","row-button")
+  section.appendChild(divRowLink)
 
   var anchorEditProfile = document.createElement("a")
   anchorEditProfile.setAttribute("href","#")
   anchorEditProfile.setAttribute("data-view","edit-profile")
-  divRowButton.appendChild(anchorEditProfile)
-
-  var buttonEditProfile = document.createElement("button")
-  buttonEditProfile.textContent="Edit"
-  anchorEditProfile.appendChild(buttonEditProfile)
+  anchorEditProfile.textContent="Edit"
+  divRowLink.appendChild(anchorEditProfile)
 
   return section
 }
@@ -129,4 +126,13 @@ document.addEventListener("DOMContentLoaded", function(event){
     data=userData
     swap("profile")
   }
+})
+
+
+
+document.addEventListener("click", function(event){
+  if (event.target !==document.querySelector('a[data-view="edit-profile"]')){
+    return
+  }
+  swap("edit-profile")
 })
