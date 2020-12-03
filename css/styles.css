@@ -82,14 +82,21 @@ button:hover {
 .edit-profile.hidden{
   display: none;
 }
+.texts {
+  margin-top: 3rem;
+}
+.text-with-icons{
+  display: flex;
+}
 .icon {
   width: 3rem;
+  object-fit: contain;
   position: relative;
-  top: 10px;
+  bottom: 11px;
 }
 .bio {
   line-height: 1.8;
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
   overflow-wrap: break-word;
 }
 @media screen and (max-width: 850px){
@@ -114,6 +121,9 @@ button:hover {
   }
    .row-button{
     text-align: center;
+  }
+  .text-with-icons{
+    justify-content: center;
   }
   .bio {
     text-align: center;
