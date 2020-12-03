@@ -87,10 +87,9 @@ button:hover {
   display: flex;
 }
 .icon {
-  width: 3rem;
-  object-fit: contain;
-  position: relative;
-  bottom: 11px;
+  font-size: 35px;
+  margin: 7px;
+  color: #495057;
 }
 .bio {
   line-height: 1.8;
