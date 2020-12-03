@@ -23,7 +23,6 @@ $form.addEventListener("submit",function(event){
 
 var $profile = document.querySelector(".profile")
 var $editProfile = document.querySelector(".edit-profile")
-var $section = document.querySelector("section")
 
 function renderProfile (profile){
   var section = document.createElement("section")
@@ -112,6 +111,7 @@ function swap (dataView){
     $profile.className="profile"
     $editProfile.className="hidden"
     data.view = dataView
+    //$profile.firstChild.remove()//
     $profile.appendChild(renderProfile(data.profile))
   }
 }
@@ -127,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function(event){
     swap("profile")
   }
 })
-
-
 
 document.addEventListener("click", function(event){
   if (event.target !==document.querySelector('a[data-view="edit-profile"]')){
