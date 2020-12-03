@@ -20,12 +20,12 @@
     <h1 class="header">Code Journal</h1>
   </header>
   <main>
-    <div data-view="edit-profile">
-      <h1>Edit Profile</h1>
+    <div data-view="edit-profile" class="edit-profile hidden">
       <form>
+        <h1>Edit Profile</h1>
         <div class="row-half">
           <div class="image-frame">
-            <input class="profile-image" type="image" src="./images/placeholder-image-square.jpg" name="profile-image">
+            <input class="profile-image" type="image" src="./images/placeholder-image-square.jpg" name="profile-image" required>
           </div>
           <div class="text-inputs">
             <label for="avatar-url"><p>Avatar URL</p></label>
@@ -47,6 +47,7 @@
         </div>
       </form>
     </div>
+    <div data-view="profile" class="profile"></div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

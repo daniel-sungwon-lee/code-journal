@@ -18,4 +18,86 @@ $form.addEventListener("submit",function(event){
   localStorage.setItem("data", dataJSON)
   $form.reset()
   $profileImage.setAttribute("src","./images/placeholder-image-square.jpg")
+  swap("profile")
+})
+
+var $profile = document.querySelector(".profile")
+var $editProfile = document.querySelector(".edit-profile")
+var $section = document.querySelector("section")
+
+function renderProfile (profile){
+  var section = document.createElement("section")
+  var h1 = document.createElement("h1")
+  h1.textContent=profile.fullName
+  section.appendChild(h1)
+  var div = document.createElement("div")
+  div.setAttribute("class","row-half")
+  section.appendChild(div)
+  var div2 = document.createElement("div")
+  div2.setAttribute("class","image-frame")
+  div.appendChild(div2)
+  var img = document.createElement("img")
+  img.setAttribute("src",profile.avatarUrl)
+  img.setAttribute("class","profile-image")
+  img.setAttribute("alt","Avatar Image")
+  div2.appendChild(img)
+  var div3 = document.createElement("div")
+  div3.setAttribute("class","text-inputs")
+  div.appendChild(div3)
+  var div4 = document.createElement("div")
+  div4.setAttribute("class","texts")
+  div3.appendChild(div4)
+  var div5 = document.createElement("div")
+  div5.setAttribute("class","text-with-icons")
+  div4.appendChild(div5)
+  var img2 = document.createElement("img")
+  img2.setAttribute("src","https://cdn3.iconfinder.com/data/icons/iconoid-ui-essentials/32/ui_user_account_person_username-512.png")
+  img2.setAttribute("class","icon")
+  img2.setAttribute("alt","Username Icon")
+  div5.appendChild(img2)
+  var p = document.createElement("p")
+  p.textContent=profile.username
+  div5.appendChild(p)
+  var div6 = document.createElement("div")
+  div6.setAttribute("class","text-with-icons")
+  div4.appendChild(div6)
+  var img3 = document.createElement("img")
+  img3.setAttribute("src","https://icons-for-free.com/iconfiles/png/512/location+locationpin+pin+icon-1320168115896022020.png")
+  img3.setAttribute("class","icon")
+  img3.setAttribute("alt","Location Icon")
+  div6.appendChild(img3)
+  var p2 = document.createElement("p")
+  p2.textContent=profile.location
+  div6.appendChild(p2)
+  var p3 = document.createElement("p")
+  p3.setAttribute("class","bio")
+  p3.textContent=profile.bio
+  div4.appendChild(p3)
+  return section
+}
+
+function swap (dataView){
+  if (dataView === "edit-profile"){
+    $editProfile.className="edit-profile"
+    $profile.className="profile hidden"
+    data.view = dataView
+
+  } else if (dataView ==="profile"){
+    $profile.className="profile"
+    $editProfile.className="edit-profile hidden"
+    data.view = dataView
+    $profile.appendChild(renderProfile(data.profile))
+  }
+}
+
+var JSONdata = localStorage.getItem("data")
+var userData = JSON.parse(JSONdata)
+
+document.addEventListener("DOMContentLoaded", function(event){
+  if (userData===null){
+    swap("edit-profile")
+  }else {
+    data=userData
+    swap("profile")
+  }
 })

@@ -11,7 +11,7 @@ h1 {
   font-size: 33px;
   margin-left: 3rem;
 }
-form {
+form,section {
   max-width: 862px;
   position: relative;
 }
@@ -46,20 +46,6 @@ form {
 p {
   font-family: "Noto Sans JP",sans-serif;
 }
-@media screen and (max-width:850px){
-  .row-half{
-    flex-direction: column;
-  }
-  .image-frame{
-    margin: auto;
-  }
-  .text-inputs{
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding: initial
-  }
-}
 .row-full {
   margin: 0 3rem;
 }
@@ -73,15 +59,6 @@ textarea {
 }
 textarea:focus {
   box-shadow: 0px 0px 20px lightgray;
-}
-@media screen and (max-width: 850px){
-  textarea{
-    width: 320px;
-  }
-  .row-full{
-    margin: initial;
-    text-align: center;
-  }
 }
 .row-button {
   text-align: right;
@@ -102,8 +79,57 @@ button{
 button:hover {
   background-color: #CED4DA;
 }
+.edit-profile.hidden{
+  display: none;
+}
+.texts {
+  margin-top: 3rem;
+}
+.text-with-icons{
+  display: flex;
+}
+.icon {
+  width: 3rem;
+  object-fit: contain;
+  position: relative;
+  bottom: 11px;
+}
+.bio {
+  line-height: 1.8;
+  margin: 1rem 1rem;
+  overflow-wrap: break-word;
+}
 @media screen and (max-width: 850px){
-  .row-button{
+  .row-half{
+    flex-direction: column;
+  }
+  .image-frame{
+    margin: auto;
+  }
+  .text-inputs{
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
+    padding: initial
+  }
+  textarea{
+    width: 320px;
+  }
+  .row-full{
+    margin: initial;
+    text-align: center;
+  }
+   .row-button{
+    text-align: center;
+  }
+  .text-with-icons{
+    justify-content: center;
+  }
+  .bio {
+    text-align: center;
+  }
+  .header,h1{
+    text-align: center;
+    margin-left: initial;
   }
 }
