@@ -34,7 +34,7 @@ form,section {
   width: 50%;
   margin-left: 3rem;
 }
-.profile-image {
+.profile-image,.entry-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;

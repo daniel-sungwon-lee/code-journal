@@ -1,4 +1,4 @@
-var $form = document.querySelector("form")
+var $form = document.querySelector(".form-profile")
 var $profileImage = document.querySelector(".profile-image")
 
 $form.addEventListener("input", function (event){
@@ -135,6 +135,22 @@ function swap (dataView){
     }
     $profile.appendChild(renderProfile(data.profile))
     document.querySelector("a[data-view='entries']").className="nav-bar"
+  } else if (dataView==="entries"){
+    for (var i = 0; i < $dataViewDivs.length; i++) {
+      if (dataView === $dataViewDivs[i].getAttribute("data-view")) {
+        $dataViewDivs[i].className = dataView
+      } else {
+        $dataViewDivs[i].className = "hidden"
+      }
+    }
+  } else if (dataView==="create-entry"){
+    for (var i = 0; i < $dataViewDivs.length; i++) {
+      if (dataView === $dataViewDivs[i].getAttribute("data-view")) {
+        $dataViewDivs[i].className = dataView
+      } else {
+        $dataViewDivs[i].className = "hidden"
+      }
+    }
   }
 }
 

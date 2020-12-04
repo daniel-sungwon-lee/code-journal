@@ -27,7 +27,7 @@
   </header>
   <main>
     <div data-view="edit-profile" class="edit-profile hidden">
-      <form>
+      <form class="form-profile">
         <h1>Edit Profile</h1>
         <div class="row-half">
           <div class="image-frame">
@@ -55,7 +55,29 @@
     </div>
     <div data-view="profile" class="profile"></div>
     <div data-view="entries" class="entries"></div>
-    <div data-view="create-entry" class="create-entry"></div>
+    <div data-view="create-entry" class="create-entry">
+      <form class="form-entry">
+        <h1>New Entry</h1>
+        <div class="row-half">
+          <div class="image-frame">
+            <input class="entry-image" type="image" src="./images/placeholder-image-square.jpg" required>
+          </div>
+          <div class="text-inputs">
+            <label for="image-url"><p>Image URL</p></label>
+            <input class="text" type="text" name="imageUrl" id="image-url" required>
+            <label for="title"><p>Title</p></label>
+            <input class="text" type="text" name="title" id="title" required>
+          </div>
+        </div>
+        <div class="row-full">
+          <label for="notes"><p>Notes</p></label>
+          <textarea name="notes" id="notes" required></textarea>
+        </div>
+        <div class="row-button">
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
