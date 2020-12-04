@@ -8,6 +8,7 @@ $form.addEventListener("input", function (event){
 })
 
 $form.addEventListener("submit",function(event){
+  event.preventDefault()
   data.profile.avatarUrl=$form.elements.avatarUrl.value
   data.profile.username=$form.elements.username.value
   data.profile.fullName=$form.elements.fullName.value
@@ -94,17 +95,25 @@ function renderProfile (profile){
   return section
 }
 
+
+var JSONdata = localStorage.getItem("data")
+var userData = JSON.parse(JSONdata)
+
+
 function swap (dataView){
   if (dataView === "edit-profile"){
     $editProfile.className="edit-profile"
     $profile.className="hidden"
     data.view = dataView
-    $form.elements.avatarUrl.value=userData.profile.avatarUrl
-    $profileImage.setAttribute("src",userData.profile.avatarUrl)
-    $form.elements.username.value=userData.profile.username
-    $form.elements.fullName.value=userData.profile.fullName
-    $form.elements.location.value=userData.profile.location
-    $form.elements.bio.value=userData.profile.bio
+    $form.elements.avatarUrl.value=data.profile.avatarUrl
+    var userData = JSON.parse(localStorage.getItem("data"))
+    if (userData!==null){
+      $profileImage.setAttribute("src",data.profile.avatarUrl)
+    }
+    $form.elements.username.value=data.profile.username
+    $form.elements.fullName.value=data.profile.fullName
+    $form.elements.location.value=data.profile.location
+    $form.elements.bio.value=data.profile.bio
 
   } else if (dataView ==="profile"){
     $profile.className="profile"
@@ -117,9 +126,6 @@ function swap (dataView){
   }
 }
 
-var JSONdata = localStorage.getItem("data")
-var userData = JSON.parse(JSONdata)
-
 document.addEventListener("DOMContentLoaded", function(event){
   if (userData===null){
     swap("edit-profile")
@@ -129,9 +135,8 @@ document.addEventListener("DOMContentLoaded", function(event){
   }
 })
 
-$links = document.querySelectorAll("a")
-
 document.addEventListener("click", function(event){
+  var userData = JSON.parse(localStorage.getItem("data"))
   if (event.target ===document.querySelector("a[data-view='edit-profile']")){
     swap("edit-profile")
   }else if ((event.target===document.querySelector("a[data-view='profile']"))&&(userData!==null)){
