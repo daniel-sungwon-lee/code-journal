@@ -24,6 +24,7 @@ h1 {
 form,section {
   max-width: 862px;
   position: relative;
+  margin-bottom: 4rem;
 }
 .row-half{
   display: flex;
@@ -73,6 +74,7 @@ textarea:focus {
 }
 .row-button {
   text-align: right;
+  margin: 1rem 0;
 }
 button{
   width: 5rem;
