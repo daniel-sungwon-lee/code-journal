@@ -101,9 +101,15 @@ var userData = JSON.parse(JSONdata)
 
 
 function swap (dataView){
+  $dataViewDivs = document.querySelectorAll("div[data-view]")
   if (dataView === "edit-profile"){
-    $editProfile.className="edit-profile"
-    $profile.className="hidden"
+    for (var i=0; i<$dataViewDivs.length;i++){
+      if (dataView === $dataViewDivs[i].getAttribute("data-view")){
+        $dataViewDivs[i].className=dataView
+      }else{
+        $dataViewDivs[i].className="hidden"
+      }
+    }
     data.view = dataView
     $form.elements.avatarUrl.value=data.profile.avatarUrl
     var userData = JSON.parse(localStorage.getItem("data"))
@@ -116,8 +122,13 @@ function swap (dataView){
     $form.elements.bio.value=data.profile.bio
 
   } else if (dataView ==="profile"){
-    $profile.className="profile"
-    $editProfile.className="hidden"
+    for (var i = 0; i < $dataViewDivs.length; i++) {
+      if (dataView === $dataViewDivs[i].getAttribute("data-view")) {
+        $dataViewDivs[i].className = dataView
+      } else {
+        $dataViewDivs[i].className = "hidden"
+      }
+    }
     data.view = dataView
     while($profile.firstChild){
       $profile.firstChild.remove()
