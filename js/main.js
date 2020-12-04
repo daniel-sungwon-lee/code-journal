@@ -123,12 +123,15 @@ function swap (dataView){
       $profile.firstChild.remove()
     }
     $profile.appendChild(renderProfile(data.profile))
+    document.querySelector("a[data-view='entries']").className="nav-bar"
   }
 }
 
 document.addEventListener("DOMContentLoaded", function(event){
   if (userData===null){
     swap("edit-profile")
+    var $entiresNav = document.querySelector('a[data-view="entries"]')
+    $entiresNav.className="hidden"
   }else {
     data=userData
     swap("profile")
@@ -141,5 +144,7 @@ document.addEventListener("click", function(event){
     swap("edit-profile")
   }else if ((event.target===document.querySelector("a[data-view='profile']"))&&(userData!==null)){
     swap("profile")
+  } else if ((event.target===document.querySelector("a[data-view='entries']"))&&(userData!==null)){
+
   }
 })
