@@ -37,6 +37,7 @@ form,section {
 .image-frame{
   width: 50%;
   margin-left: 3rem;
+  display: flex;
 }
 .profile-image,.entry-image {
   max-width: 100%;
@@ -151,12 +152,26 @@ textarea::placeholder{
 .entry-image{
   border-radius: 20px;
 }
+h2 {
+  font-family: "Noto Sans JP",sans-serif;
+  text-transform: uppercase;
+}
+.notes {
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+.texts.entry {
+  margin-top: 0;
+}
 @media screen and (max-width: 850px){
   .row-half{
     flex-direction: column;
+    margin-top: 1rem;
   }
   .image-frame{
     margin: auto;
+    width: 75%;
+    text-align: center;
   }
   .text-inputs{
     width: 100%;
@@ -202,5 +217,8 @@ textarea::placeholder{
   }
   .row-entries-header{
     justify-content: space-around;
+  }
+  .texts{
+    padding: 0 2rem;
   }
 }

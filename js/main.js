@@ -186,6 +186,8 @@ document.addEventListener("click", function(event){
     swap("entries")
   } else if (event.target===document.querySelector("a[data-view='create-entry']")){
     swap("create-entry")
+    $formEntry.reset()
+    $entryImage.setAttribute("src", "./images/placeholder-image-square.jpg")
   }
 })
 
