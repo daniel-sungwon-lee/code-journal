@@ -4,7 +4,6 @@ var $profileImage = document.querySelector(".profile-image")
 var $avatarUrl=document.querySelector("#avatar-url")
 
 $avatarUrl.addEventListener("blur", function(event){
-  console.log(event.target)
   if (event.target.value===""){
     $profileImage.setAttribute("src","./images/placeholder-image-square.jpg")
   }
@@ -113,6 +112,7 @@ var userData = JSON.parse(JSONdata)
 
 function swap (dataView){
   $dataViewDivs = document.querySelectorAll("div[data-view]")
+
   if (dataView === "edit-profile"){
     for (var i=0; i<$dataViewDivs.length;i++){
       if (dataView === $dataViewDivs[i].getAttribute("data-view")){
@@ -211,7 +211,10 @@ $formEntry.addEventListener("submit",function(event){
     entry.imageUrl=$formEntry.elements.imageUrl.value
     entry.title=$formEntry.elements.title.value
     entry.notes=$formEntry.elements.notes.value
+
     data.entries.push(entry)
+    localStorage.setItem("data",JSON.stringify(data))
+
     $formEntry.reset()
     $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
     swap("entries")
