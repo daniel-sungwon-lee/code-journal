@@ -19,9 +19,9 @@
   <header>
     <div class="header-row">
       <h1 class="header">Code Journal</h1>
-      <div>
-        <a href="#" data-view="profile" class="nav-bar">Profile</a>
-        <a href="#" data-view="entries" class="nav-bar">Entries</a>
+      <div class="nav-bar">
+        <a href="#" data-view="profile" class="nav">Profile</a>
+        <a href="#" data-view="entries" class="nav">Entries</a>
       </div>
     </div>
   </header>
@@ -35,18 +35,18 @@
           </div>
           <div class="text-inputs">
             <label for="avatar-url"><p>Avatar URL</p></label>
-            <input class="text" type="text" name="avatarUrl" id="avatar-url" required>
+            <input class="text" type="text" name="avatarUrl" id="avatar-url" required placeholder="An image address">
             <label for="username"><p>Username</p></label>
-            <input class="text" type="text" name="username" id="username" required>
+            <input class="text" type="text" name="username" id="username" required placeholder="aninterestingusername">
             <label for="full-name"><p>Full Name</p></label>
-            <input class="text" type="text" name="fullName" id="full-name" required>
+            <input class="text" type="text" name="fullName" id="full-name" required placeholder="Your Name">
             <label for="location"><p>Location</p></label>
-            <input class="text" type="text" name="location" id="location" required>
+            <input class="text" type="text" name="location" id="location" required placeholder="Someplace, Somewhere">
           </div>
         </div>
         <div class="row-full">
           <label for="bio"><p>Bio</p></label>
-          <textarea name="bio" id="bio" required></textarea>
+          <textarea name="bio" id="bio" required placeholder="A short but sweet description of yourself..."></textarea>
         </div>
         <div class="row-button">
           <button type="submit">Save</button>
@@ -54,7 +54,16 @@
       </form>
     </div>
     <div data-view="profile" class="profile"></div>
-    <div data-view="entries" class="entries"></div>
+    <div data-view="entries" class="entries">
+      <div class="row-entries-header">
+        <div>
+          <h1>Entries</h1>
+        </div>
+        <div>
+          <a href="#" data-view="create-entry">New</a>
+        </div>
+      </div>
+    </div>
     <div data-view="create-entry" class="create-entry">
       <form class="form-entry">
         <h1>New Entry</h1>

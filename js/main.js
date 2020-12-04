@@ -1,8 +1,17 @@
 var $form = document.querySelector(".form-profile")
 var $profileImage = document.querySelector(".profile-image")
 
+var $avatarUrl=document.querySelector("#avatar-url")
+
+$avatarUrl.addEventListener("blur", function(event){
+  console.log(event.target)
+  if (event.target.value===""){
+    $profileImage.setAttribute("src","./images/placeholder-image-square.jpg")
+  }
+})
+
 $form.addEventListener("input", function (event){
-  if (event.target===$form.elements.avatarUrl){
+  if ((event.target===$form.elements.avatarUrl)&&($form.elements.avatarUrl.value!=="")){
     $profileImage.setAttribute("src",$form.elements.avatarUrl.value)
   }
 })
@@ -134,7 +143,7 @@ function swap (dataView){
       $profile.firstChild.remove()
     }
     $profile.appendChild(renderProfile(data.profile))
-    document.querySelector("a[data-view='entries']").className="nav-bar"
+    document.querySelector("a[data-view='entries']").className="nav"
   } else if (dataView==="entries"){
     for (var i = 0; i < $dataViewDivs.length; i++) {
       if (dataView === $dataViewDivs[i].getAttribute("data-view")) {
@@ -171,7 +180,9 @@ document.addEventListener("click", function(event){
     swap("edit-profile")
   }else if ((event.target===document.querySelector("a[data-view='profile']"))&&(userData!==null)){
     swap("profile")
-  } else if ((event.target===document.querySelector("a[data-view='entries']"))&&(userData!==null)){
-
+  } else if (event.target===document.querySelector("a[data-view='entries']")){
+    swap("entries")
+  } else if (event.target===document.querySelector("a[data-view='create-entry']")){
+    swap("create-entry")
   }
 })

@@ -10,22 +10,26 @@ header {
   margin: 0;
   padding: 1rem 3rem;
 }
-.nav-bar{
+.nav {
   text-decoration: none;
   font-family: "Yantramanav",sans-serif;
   font-size: 23px;
   color: black;
   margin: 8px;
+  text-transform: uppercase;
+}
+main {
+  margin-bottom: 4rem;
 }
 h1 {
   font-family: "Noto Sans JP",sans-serif;
   font-size: 33px;
   margin-left: 3rem;
+  text-transform: uppercase;
 }
 form,section {
   max-width: 862px;
   position: relative;
-  margin-bottom: 4rem;
 }
 .row-half{
   display: flex;
@@ -56,6 +60,9 @@ form,section {
 .text:focus{
   box-shadow: 0px 0px 20px lightgray;
 }
+label {
+  text-transform: uppercase;
+}
 p {
   font-family: "Noto Sans JP",sans-serif;
 }
@@ -63,12 +70,12 @@ p {
   margin: 0 3rem;
 }
 textarea {
-  width: 50rem;
-  height: 8rem;
+  width: 48.5rem;
+  height: 4rem;
   border-radius: 20px;
   outline: none;
   border: solid #CED4DA;
-  transition: box-shadow 0.5s ease
+  transition: box-shadow 0.5s ease;
 }
 textarea:focus {
   box-shadow: 0px 0px 20px lightgray;
@@ -89,6 +96,7 @@ button{
   font-size: 15px;
   outline: none;
   transition: background-color 0.5s ease;
+  text-transform: uppercase;
 }
 button:hover{
   background-color: #CED4DA;
@@ -109,7 +117,7 @@ button:hover{
   margin: 1rem 1rem;
   overflow-wrap: break-word;
 }
-a[data-view="edit-profile"] {
+a[data-view="edit-profile"],a[data-view="create-entry"]{
   text-decoration: none;
   font-family: "Noto Sans JP",sans-serif;
   border: solid #CED4DA;
@@ -117,12 +125,22 @@ a[data-view="edit-profile"] {
   padding: 3px 22px;
   transition: background-color 0.5s ease;
   color: black;
+  text-transform: uppercase;
 }
 a[data-view="edit-profile"]:hover{
   background-color: #CED4DA;
 }
+a[data-view="create-entry"]:hover{
+  background-color: #CED4DA;
+}
 a:active{
   color: white;
+}
+.row-entries-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 862px;
 }
 @media screen and (max-width: 850px){
   .row-half{
@@ -161,12 +179,19 @@ a:active{
   .header-row{
     margin: auto;
     width: 320px;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
   }
   .header{
-    padding: 1rem 0rem
+    padding: 1rem 0rem 0.5rem
   }
   .nav-bar{
+    padding-bottom: 1rem;
+  }
+  .nav{
     font-size: 20px;
+  }
+  .row-entries-header{
+    justify-content: space-around;
   }
 }
