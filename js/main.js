@@ -165,6 +165,8 @@ function swap (dataView){
   }
 }
 
+var $olEntries = document.querySelector("#entries-list")
+
 document.addEventListener("DOMContentLoaded", function(event){
   if (userData===null){
     swap("edit-profile")
@@ -172,7 +174,11 @@ document.addEventListener("DOMContentLoaded", function(event){
     $entiresNav.className="hidden"
   }else {
     data=userData
-    swap("profile")
+    swap("entries")
+
+    for (var i =0;i<userData.entries.length;i++){
+      $olEntries.appendChild(renderEntry(userData.entries[i]))
+    }
   }
 })
 
@@ -219,6 +225,8 @@ $formEntry.addEventListener("submit",function(event){
 
     $formEntry.reset()
     $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
+
+    $olEntries.appendChild(renderEntry(entry))
     swap("entries")
   }
 })
@@ -227,7 +235,7 @@ function renderEntry (entry){
   var $section= document.createElement("section")
 
   var $divRowHalf = document.createElement("div")
-  $divRowHalf.setAttribute("class","row-half")
+  $divRowHalf.setAttribute("class","row-half ent")
   $section.appendChild($divRowHalf)
 
   var $divImageFrame=document.createElement("div")

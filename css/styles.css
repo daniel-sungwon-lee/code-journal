@@ -163,6 +163,12 @@ h2 {
 .texts.entry {
   margin-top: 0;
 }
+ol{
+  padding: 0;
+}
+.row-half.ent{
+  align-items: center;
+}
 @media screen and (max-width: 850px){
   .row-half{
     flex-direction: column;
