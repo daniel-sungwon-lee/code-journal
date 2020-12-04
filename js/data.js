@@ -11,3 +11,9 @@ var data = {
   },
   entries: []
 };
+
+var entry = {
+  imageUrl: "",
+  title: "",
+  notes: ""
+}
