@@ -69,18 +69,18 @@
         <h1>New Entry</h1>
         <div class="row-half">
           <div class="image-frame">
-            <input class="entry-image" type="image" src="./images/placeholder-image-square.jpg" required>
+            <input class="entry-image" id="entry-image" type="image" src="./images/placeholder-image-square.jpg" required>
           </div>
           <div class="text-inputs">
             <label for="image-url"><p>Image URL</p></label>
-            <input class="text" type="text" name="imageUrl" id="image-url" required>
+            <input class="text" type="text" name="imageUrl" id="image-url" required placeholder="An image address">
             <label for="title"><p>Title</p></label>
-            <input class="text" type="text" name="title" id="title" required>
+            <input class="text" type="text" name="title" id="title" required placeholder="A Creative Title">
           </div>
         </div>
         <div class="row-full">
           <label for="notes"><p>Notes</p></label>
-          <textarea name="notes" id="notes" required></textarea>
+          <textarea name="notes" id="notes" required placeholder="A place to jot down information..."></textarea>
         </div>
         <div class="row-button">
           <button type="submit">Save</button>

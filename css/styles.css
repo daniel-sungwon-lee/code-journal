@@ -142,6 +142,15 @@ a:active{
   justify-content: space-between;
   max-width: 862px;
 }
+input::placeholder{
+  font-family: "Yantramanav", sans-serif;
+}
+textarea::placeholder{
+  font-family: "Yantramanav",sans-serif;
+}
+.entry-image{
+  border-radius: 20px;
+}
 @media screen and (max-width: 850px){
   .row-half{
     flex-direction: column;

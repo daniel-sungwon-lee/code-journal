@@ -186,3 +186,20 @@ document.addEventListener("click", function(event){
     swap("create-entry")
   }
 })
+
+var $formEntry = document.querySelector(".form-entry")
+var $entryImage = document.querySelector ("#entry-image")
+var $imageUrl = document.querySelector("#image-url")
+
+$imageUrl.addEventListener("blur",function(event){
+  if (event.target.value===""){
+    $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
+  }
+})
+
+
+$formEntry.addEventListener("input",function(event){
+  if (event.target===$formEntry.elements.imageUrl){
+    $entryImage.setAttribute("src",$formEntry.elements.imageUrl.value)
+  }
+})
