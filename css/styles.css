@@ -10,11 +10,12 @@ header {
   margin: 0;
   padding: 1rem 3rem;
 }
-a[data-view="profile"]{
+.nav-bar{
   text-decoration: none;
   font-family: "Yantramanav",sans-serif;
   font-size: 23px;
   color: black;
+  margin: 8px;
 }
 h1 {
   font-family: "Noto Sans JP",sans-serif;
@@ -155,13 +156,17 @@ a:active{
   h1{
     text-align: center;
     margin-left: initial;
+    font-size: 29px;
   }
   .header-row{
     margin: auto;
     width: 320px;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .header{
     padding: 1rem 0rem
+  }
+  .nav-bar{
+    font-size: 20px;
   }
 }
