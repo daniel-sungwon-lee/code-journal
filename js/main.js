@@ -222,3 +222,40 @@ $formEntry.addEventListener("submit",function(event){
     swap("entries")
   }
 })
+
+function renderEntry (entry){
+  var $section= document.createElement("section")
+
+  var $divRowHalf = document.createElement("div")
+  $divRowHalf.setAttribute("class","row-half")
+  $section.appendChild($divRowHalf)
+
+  var $divImageFrame=document.createElement("div")
+  $divImageFrame.setAttribute("class","image-frame")
+  $divRowHalf.appendChild($divImageFrame)
+
+  var $entryImg =document.createElement("img")
+  $entryImg.setAttribute("src",entry.imageUrl)
+  $entryImg.setAttribute("class","entry-image")
+  $entryImg.setAttribute("alt","Entry Image")
+  $divImageFrame.appendChild($entryImg)
+
+  var $divTextInputs = document.createElement("div")
+  $divTextInputs.setAttribute("class","text-inputs")
+  $divRowHalf.appendChild($divTextInputs)
+
+  var $divTextsEntry = document.createElement("div")
+  $divTextsEntry.setAttribute("class","texts entry")
+  $divTextInputs.appendChild($divTextsEntry)
+
+  var $h2 = document.createElement("h2")
+  $h2.textContent=entry.title
+  $divTextsEntry.appendChild($h2)
+
+  var $p = document.createElement("p")
+  $p.setAttribute("class","notes")
+  $p.textContent=entry.notes
+  $divTextsEntry.appendChild($p)
+
+  return $section
+}
