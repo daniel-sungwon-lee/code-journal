@@ -8,7 +8,6 @@ $form.addEventListener("input", function (event){
 })
 
 $form.addEventListener("submit",function(event){
-  event.preventDefault()
   data.profile.avatarUrl=$form.elements.avatarUrl.value
   data.profile.username=$form.elements.username.value
   data.profile.fullName=$form.elements.fullName.value
@@ -111,7 +110,9 @@ function swap (dataView){
     $profile.className="profile"
     $editProfile.className="hidden"
     data.view = dataView
-    //$profile.firstChild.remove()//
+    while($profile.firstChild){
+      $profile.firstChild.remove()
+    }
     $profile.appendChild(renderProfile(data.profile))
   }
 }
@@ -128,9 +129,12 @@ document.addEventListener("DOMContentLoaded", function(event){
   }
 })
 
+$links = document.querySelectorAll("a")
+
 document.addEventListener("click", function(event){
-  if (event.target !==document.querySelector('a[data-view="edit-profile"]')){
-    return
+  if (event.target ===document.querySelector("a[data-view='edit-profile']")){
+    swap("edit-profile")
+  }else if ((event.target===document.querySelector("a[data-view='profile']"))&&(userData!==null)){
+    swap("profile")
   }
-  swap("edit-profile")
 })
