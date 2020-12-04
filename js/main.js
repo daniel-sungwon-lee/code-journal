@@ -199,7 +199,6 @@ $imageUrl.addEventListener("blur",function(event){
   }
 })
 
-
 $formEntry.addEventListener("input",function(event){
   if (event.target===$formEntry.elements.imageUrl){
     $entryImage.setAttribute("src",$formEntry.elements.imageUrl.value)
@@ -209,6 +208,12 @@ $formEntry.addEventListener("input",function(event){
 $formEntry.addEventListener("submit",function(event){
   if (event.target.matches(".form-entry")){
     event.preventDefault()
-
+    entry.imageUrl=$formEntry.elements.imageUrl.value
+    entry.title=$formEntry.elements.title.value
+    entry.notes=$formEntry.elements.notes.value
+    data.entries.push(entry)
+    $formEntry.reset()
+    $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
+    swap("entries")
   }
 })
