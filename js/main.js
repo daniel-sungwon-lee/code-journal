@@ -220,13 +220,14 @@ $formEntry.addEventListener("submit",function(event){
     entry.title=$formEntry.elements.title.value
     entry.notes=$formEntry.elements.notes.value
 
+    $olEntries.appendChild(renderEntry(entry))
+
     data.entries.push(entry)
     localStorage.setItem("data",JSON.stringify(data))
 
     $formEntry.reset()
     $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
 
-    $olEntries.appendChild(renderEntry(entry))
     swap("entries")
   }
 })
