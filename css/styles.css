@@ -169,6 +169,9 @@ ol{
 .row-half.ent{
   align-items: center;
 }
+.entries-container{
+  margin-bottom: 3rem;
+}
 @media screen and (max-width: 850px){
   .row-half{
     flex-direction: column;

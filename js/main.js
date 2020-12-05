@@ -233,6 +233,7 @@ $formEntry.addEventListener("submit",function(event){
 
 function renderEntry (entry){
   var $section= document.createElement("section")
+  $section.setAttribute("class","entries-container")
 
   var $divRowHalf = document.createElement("div")
   $divRowHalf.setAttribute("class","row-half ent")
