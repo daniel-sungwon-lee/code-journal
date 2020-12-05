@@ -165,6 +165,8 @@ function swap (dataView){
   }
 }
 
+var $olEntries = document.querySelector("#entries-list")
+
 document.addEventListener("DOMContentLoaded", function(event){
   if (userData===null){
     swap("edit-profile")
@@ -172,7 +174,11 @@ document.addEventListener("DOMContentLoaded", function(event){
     $entiresNav.className="hidden"
   }else {
     data=userData
-    swap("profile")
+    swap("entries")
+
+    for (var i =0;i<userData.entries.length;i++){
+      $olEntries.appendChild(renderEntry(userData.entries[i]))
+    }
   }
 })
 
@@ -186,6 +192,8 @@ document.addEventListener("click", function(event){
     swap("entries")
   } else if (event.target===document.querySelector("a[data-view='create-entry']")){
     swap("create-entry")
+    $formEntry.reset()
+    $entryImage.setAttribute("src", "./images/placeholder-image-square.jpg")
   }
 })
 
@@ -212,11 +220,52 @@ $formEntry.addEventListener("submit",function(event){
     entry.title=$formEntry.elements.title.value
     entry.notes=$formEntry.elements.notes.value
 
+    $olEntries.appendChild(renderEntry(entry))
+
     data.entries.push(entry)
     localStorage.setItem("data",JSON.stringify(data))
 
     $formEntry.reset()
     $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
+
     swap("entries")
   }
 })
+
+function renderEntry (entry){
+  var $section= document.createElement("section")
+  $section.setAttribute("class","entries-container")
+
+  var $divRowHalf = document.createElement("div")
+  $divRowHalf.setAttribute("class","row-half ent")
+  $section.appendChild($divRowHalf)
+
+  var $divImageFrame=document.createElement("div")
+  $divImageFrame.setAttribute("class","image-frame")
+  $divRowHalf.appendChild($divImageFrame)
+
+  var $entryImg =document.createElement("img")
+  $entryImg.setAttribute("src",entry.imageUrl)
+  $entryImg.setAttribute("class","entry-image")
+  $entryImg.setAttribute("alt","Entry Image")
+  $divImageFrame.appendChild($entryImg)
+
+  var $divTextInputs = document.createElement("div")
+  $divTextInputs.setAttribute("class","text-inputs")
+  $divRowHalf.appendChild($divTextInputs)
+
+  var $divTextsEntry = document.createElement("div")
+  $divTextsEntry.setAttribute("class","texts entry")
+  $divTextInputs.appendChild($divTextsEntry)
+
+  var $h2 = document.createElement("h2")
+  $h2.textContent=entry.title
+  $divTextsEntry.appendChild($h2)
+
+  var $p = document.createElement("p")
+  $p.setAttribute("class","notes")
+  $p.textContent=entry.notes
+  $divTextsEntry.appendChild($p)
+
+  return $section
+}
