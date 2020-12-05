@@ -170,7 +170,7 @@ ol{
   align-items: center;
 }
 .entries-container{
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 @media screen and (max-width: 850px){
   .row-half{
