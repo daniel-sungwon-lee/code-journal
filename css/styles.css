@@ -155,6 +155,7 @@ textarea::placeholder{
 h2 {
   font-family: "Noto Sans JP",sans-serif;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 .notes {
   line-height: 1.8;
