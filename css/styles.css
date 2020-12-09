@@ -96,11 +96,12 @@ button{
   cursor: pointer;
   font-size: 15px;
   outline: none;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, border 0.5s ease,color 0.3s ease;
   text-transform: uppercase;
 }
 button:hover{
   background-color: #CED4DA;
+  color: white;
 }
 .texts {
   margin-top: 3rem;
@@ -124,18 +125,22 @@ a[data-view="edit-profile"],a[data-view="create-entry"],a[data-view="delete-entr
   border: solid #CED4DA;
   border-radius: 20px;
   padding: 3px 22px;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, border 0.5s ease, color 0.3s ease;
   color: black;
   text-transform: uppercase;
 }
 a[data-view="edit-profile"]:hover{
   background-color: #CED4DA;
+  color: white;
 }
 a[data-view="create-entry"]:hover{
   background-color: #CED4DA;
+  color: white;
 }
 a[data-view="delete-entry"]:hover{
-  background-color: #CED4DA;
+  background-color: #f00519;
+  color: white;
+  border:  solid #f00519;
 }
 a:active{
   color: white;
@@ -195,6 +200,11 @@ ol{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+.delete-button:hover{
+  background-color: #f00519;
+  color: white;
+  border: solid #f00519;
 }
 @media screen and (max-width: 850px){
   .row-half{

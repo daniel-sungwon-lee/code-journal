@@ -202,7 +202,7 @@ document.addEventListener("click", function(event){
       if (event.target.matches("#yes")){
         clicked.closest(".entries-container").remove()
         $overlay.className="overlay hidden"
-      } else{
+      } else if (event.target.matches("#no")){
         $overlay.className="overlay hidden"
       }
     })
