@@ -118,7 +118,7 @@ button:hover{
   margin: 1rem 1rem;
   overflow-wrap: break-word;
 }
-a[data-view="edit-profile"],a[data-view="create-entry"]{
+a[data-view="edit-profile"],a[data-view="create-entry"],a[data-view="delete-entry"]{
   text-decoration: none;
   font-family: "Noto Sans JP",sans-serif;
   border: solid #CED4DA;
@@ -132,6 +132,9 @@ a[data-view="edit-profile"]:hover{
   background-color: #CED4DA;
 }
 a[data-view="create-entry"]:hover{
+  background-color: #CED4DA;
+}
+a[data-view="delete-entry"]:hover{
   background-color: #CED4DA;
 }
 a:active{
@@ -172,6 +175,26 @@ ol{
 }
 .entries-container{
   margin-bottom: 2rem;
+}
+.overlay{
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal{
+  text-align: center;
+  margin: auto;
+  width: 541px;
+  background-color: #CED4DA;
+  padding: 1rem;
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 @media screen and (max-width: 850px){
   .row-half{
