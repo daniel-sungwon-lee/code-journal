@@ -179,7 +179,7 @@ ol{
   align-items: center;
 }
 .entries-container{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .overlay{
   background-color: rgba(0, 0, 0, 0.8);
@@ -263,5 +263,8 @@ ol{
   }
   .texts{
     padding: 0 2rem;
+  }
+  .entries-container{
+    margin-bottom: 3rem;
   }
 }

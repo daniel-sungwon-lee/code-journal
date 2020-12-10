@@ -200,8 +200,24 @@ document.addEventListener("click", function(event){
     var clicked = event.target
     $overlay.addEventListener("click",function(event){
       if (event.target.matches("#yes")){
-        clicked.closest(".entries-container").remove()
-        $overlay.className="overlay hidden"
+        var clickedSection=clicked.closest(".entries-container")
+        var $entrySections = document.querySelectorAll(".entries-container")
+        var i =0
+        while (i<$entrySections.length){
+          if (clickedSection===$entrySections[i]){
+            if (userData===null){
+              data.entries.splice(i,1)
+              localStorage.setItem("data",JSON.stringify(data))
+            }else {
+              var userData= JSON.parse(localStorage.getItem("data"))
+              userData.entries.splice(i,1)
+              localStorage.setItem("data",JSON.stringify(userData))
+            }
+          }
+          i++
+        }
+        clickedSection.remove()
+        $overlay.className = "overlay hidden"
       } else if (event.target.matches("#no")){
         $overlay.className="overlay hidden"
       }
@@ -234,8 +250,13 @@ $formEntry.addEventListener("submit",function(event){
 
     $olEntries.appendChild(renderEntry(entry))
 
-    data.entries.push(entry)
-    localStorage.setItem("data",JSON.stringify(data))
+    if (userData===null){
+      data.entries.push(entry)
+      localStorage.setItem("data",JSON.stringify(data))
+    }
+    var userData = JSON.parse(localStorage.getItem("data"))
+    userData.entries.push(entry)
+    localStorage.setItem("data",JSON.stringify(userData))
 
     $formEntry.reset()
     $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
