@@ -183,7 +183,7 @@ ol{
 }
 .overlay{
   background-color: rgba(0, 0, 0, 0.8);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -266,5 +266,15 @@ ol{
   }
   .entries-container{
     margin-bottom: 3rem;
+  }
+  .modal{
+    width: 333px;
+    height: 212px;
+  }
+  .modal-buttons{
+    margin: -1rem 0;
+  }
+  .modal-header{
+    margin: -0.5rem 3px;
   }
 }

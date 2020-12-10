@@ -305,7 +305,7 @@ function renderEntry (entry){
   $section.appendChild($divRowButton)
 
   var $deleteEntry = document.createElement("a")
-  $deleteEntry.setAttribute("href","#")
+  //$deleteEntry.setAttribute("href","#")//
   $deleteEntry.setAttribute("data-view","delete-entry")
   $deleteEntry.textContent="Delete"
   $divRowButton.appendChild($deleteEntry)
