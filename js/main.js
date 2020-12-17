@@ -194,6 +194,34 @@ document.addEventListener("click", function(event){
     swap("create-entry")
     $formEntry.reset()
     $entryImage.setAttribute("src", "./images/placeholder-image-square.jpg")
+  } else if (event.target.matches("a[data-view='delete-entry']")){
+    var $overlay = document.querySelector(".overlay")
+    $overlay.className="overlay"
+    var clicked = event.target
+    $overlay.addEventListener("click",function(event){
+      if (event.target.matches("#yes")){
+        var clickedSection=clicked.closest(".entries-container")
+        var $entrySections = document.querySelectorAll(".entries-container")
+        var i =0
+        while (i<$entrySections.length){
+          if (clickedSection===$entrySections[i]){
+            if (userData===null){
+              data.entries.splice(i,1)
+              localStorage.setItem("data",JSON.stringify(data))
+            }else {
+              var userData= JSON.parse(localStorage.getItem("data"))
+              userData.entries.splice(i,1)
+              localStorage.setItem("data",JSON.stringify(userData))
+            }
+          }
+          i++
+        }
+        clickedSection.remove()
+        $overlay.className = "overlay hidden"
+      } else if (event.target.matches("#no")){
+        $overlay.className="overlay hidden"
+      }
+    })
   }
 })
 
@@ -222,8 +250,13 @@ $formEntry.addEventListener("submit",function(event){
 
     $olEntries.appendChild(renderEntry(entry))
 
-    data.entries.push(entry)
-    localStorage.setItem("data",JSON.stringify(data))
+    if (userData===null){
+      data.entries.push(entry)
+      localStorage.setItem("data",JSON.stringify(data))
+    }
+    var userData = JSON.parse(localStorage.getItem("data"))
+    userData.entries.push(entry)
+    localStorage.setItem("data",JSON.stringify(userData))
 
     $formEntry.reset()
     $entryImage.setAttribute("src","./images/placeholder-image-square.jpg")
@@ -266,6 +299,16 @@ function renderEntry (entry){
   $p.setAttribute("class","notes")
   $p.textContent=entry.notes
   $divTextsEntry.appendChild($p)
+
+  var $divRowButton = document.createElement("div")
+  $divRowButton.setAttribute("class","row-button")
+  $section.appendChild($divRowButton)
+
+  var $deleteEntry = document.createElement("a")
+  //$deleteEntry.setAttribute("href","#")//
+  $deleteEntry.setAttribute("data-view","delete-entry")
+  $deleteEntry.textContent="Delete"
+  $divRowButton.appendChild($deleteEntry)
 
   return $section
 }
