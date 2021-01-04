@@ -114,6 +114,7 @@ function swap (dataView){
   $dataViewDivs = document.querySelectorAll("div[data-view]")
 
   if (dataView === "edit-profile"){
+    document.querySelector("#edit-profile-h1").textContent="Edit Profile"
     for (var i=0; i<$dataViewDivs.length;i++){
       if (dataView === $dataViewDivs[i].getAttribute("data-view")){
         $dataViewDivs[i].className=dataView
@@ -170,6 +171,7 @@ var $olEntries = document.querySelector("#entries-list")
 document.addEventListener("DOMContentLoaded", function(event){
   if (userData===null){
     swap("edit-profile")
+    document.querySelector("#edit-profile-h1").textContent="Create Profile"
     var $entiresNav = document.querySelector('a[data-view="entries"]')
     $entiresNav.className="hidden"
   }else {
